@@ -1,4 +1,4 @@
-package com.projetopi.ProjetoPI;
+package com.projetopi;
 
 import javax.sql.DataSource;
 
