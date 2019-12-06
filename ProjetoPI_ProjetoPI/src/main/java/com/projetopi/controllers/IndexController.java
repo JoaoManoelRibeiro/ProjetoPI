@@ -21,5 +21,4 @@ public class IndexController {
 		mv.addObject("objetosachados", objetosachados);
 		return mv;
 	}
-	
 }
