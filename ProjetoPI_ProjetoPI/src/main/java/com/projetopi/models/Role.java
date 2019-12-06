@@ -19,6 +19,7 @@ public class Role implements GrantedAuthority {
 	private Long id;
 	private String nomeRole;
 	@ManyToMany
+	
 	private List<Usuario> Usuarios;
 
 	public Long getId() {

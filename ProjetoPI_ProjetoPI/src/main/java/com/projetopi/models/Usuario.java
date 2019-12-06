@@ -22,7 +22,7 @@ public class Usuario implements UserDetails {
 	
 	
 	@Id
-	private Long id;
+	private long id;
 	private String login;
 	private String nomeCompleto;
 	private String senha;
@@ -74,7 +74,7 @@ public class Usuario implements UserDetails {
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.roles;
 	}
 
 	@Override

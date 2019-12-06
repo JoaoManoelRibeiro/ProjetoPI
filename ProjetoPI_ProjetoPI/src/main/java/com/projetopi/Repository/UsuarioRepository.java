@@ -8,4 +8,5 @@ import com.projetopi.models.Usuario;
 
 public interface UsuarioRepository extends CrudRepository<Usuario, String> {
 	Usuario findByLogin(String login);
+	Usuario findById(long id);
 }

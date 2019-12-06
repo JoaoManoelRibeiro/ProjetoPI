@@ -7,13 +7,13 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
 import com.projetopi.Repository.UsuarioRepository;
 import com.projetopi.models.Usuario;
 
 
-@Repository
+@Component
 @Transactional
 public class ImplementsUserDetailsService implements UserDetailsService  {
 	@Autowired

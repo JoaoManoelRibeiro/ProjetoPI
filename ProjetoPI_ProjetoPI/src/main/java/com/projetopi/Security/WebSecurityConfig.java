@@ -19,8 +19,9 @@ private  ImplementsUserDetailsService userDetailsService;
 		protected void configure(HttpSecurity http) throws Exception{
 			http.csrf().disable().authorizeRequests()
 			.antMatchers(HttpMethod.GET, "/").permitAll()
-			.antMatchers(HttpMethod.GET, "/cadastrarObjetoachado").hasRole("ADMIN")
-			.antMatchers(HttpMethod.POST, "/cadastrarObjetoachado").hasRole("ADMIN")
+			.antMatchers(HttpMethod.GET, "/formUsuario").hasRole("ADMIN")
+//			.antMatchers(HttpMethod.GET, "/formUsuario").permitAll()
+		//	.antMatchers(HttpMethod.POST, "/formUsuario").hasRole("ADMIN")
 			.anyRequest().authenticated()
 			.and().formLogin().permitAll()
 			.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
@@ -28,7 +29,7 @@ private  ImplementsUserDetailsService userDetailsService;
 		@Override
 		protected void configure(AuthenticationManagerBuilder auth) throws Exception{
 		auth.userDetailsService(userDetailsService)
-		.passwordEncoder(new BCryptPasswordEncoder());
+				.passwordEncoder(new BCryptPasswordEncoder());
 }
 
 		@Override 

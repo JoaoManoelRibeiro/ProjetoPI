@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+	<html xmlns:th="http://thymeleaf.org"
+		  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+	<title>IFRN - Cadastro de Usuarios</title>
+	
+		  <!--Import Google Icon Font-->
+	      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+	      <!--Import materialize.css-->
+	      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+	
+	      <!--Let browser know website is optimized for mobile-->
+	      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	      
+	      <link rel="stylesheet" href="estilo/estiloCss.css"/>
+	
+		  <meta charset="utf-8">
+	</head>
+	
+	<body>
+	
+	<header>
+		<nav>
+    <div class="nav-wrapper , #1565c0 azul escuro-3">
+      <a href="#" class="brand-logo"><i class="material-icons">person</i>Cadastre Alunos:</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">Cadastro de Alunos</a></li>
+        <li><a href="/o">Cadastro de Livros</a></li>
+        <li><a href="/">Cadastro de Emprestimos</a></li>
+        <li><a href="/">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+	</header>
+	
+	
+		
+		
+	<div class="container formUsuario">
+		<form method="post" action="/formUsuario">
+		
+			Nome: <input type="text" value="" name="nomeCompleto" placeholder="nomeCompleto"><br><br>
+			<div class="row">
+				<div class="input-field col s6">
+					Matrícula: <input type="text" value="" name="senha"><br><br>
+			    </div>
+			   
+			
+			<button type="submit" class="waves-effect waves-light btn">Salvar</button>
+		</form>
+	</div>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<!--JavaScript at end of body for optimized loading-->
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	
+	</body>
+	</html>
