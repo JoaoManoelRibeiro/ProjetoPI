@@ -18,7 +18,7 @@ public class DataConfiguration {
 	 	ds.setDriverClassName("com.mysql.jdbc.Driver");
 	 	ds.setUrl("jdbc:mysql://localhost:3306/projetopi?serverTimezone=UTC");
 	 	ds.setUsername("root");
-	 	ds.setPassword("123456");
+	 	ds.setPassword("clarinete123");
 	 	return ds;
 	}
 	

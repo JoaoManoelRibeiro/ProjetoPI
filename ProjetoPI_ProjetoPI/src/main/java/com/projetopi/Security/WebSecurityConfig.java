@@ -18,8 +18,9 @@ private  ImplementsUserDetailsService userDetailsService;
 		@Override
 		protected void configure(HttpSecurity http) throws Exception{
 			http.csrf().disable().authorizeRequests()
-			.antMatchers(HttpMethod.GET, "/").permitAll()
-			.antMatchers(HttpMethod.GET, "/formUsuario").hasRole("ADMIN")
+			.antMatchers( "/").permitAll()
+			.antMatchers( "/CadastroObjetoPerdido").hasRole("USER")
+			.antMatchers( "/CadastroObjetoAchado").hasRole("ADMIN")
 //			.antMatchers(HttpMethod.GET, "/formUsuario").permitAll()
 		//	.antMatchers(HttpMethod.POST, "/formUsuario").hasRole("ADMIN")
 			.anyRequest().authenticated()

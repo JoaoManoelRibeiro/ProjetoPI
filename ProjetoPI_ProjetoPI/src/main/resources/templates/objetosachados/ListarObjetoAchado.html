@@ -1,0 +1,57 @@
+<html	xmlns:th="http://thymeleaf.org"
+		xmlns:layout="http://www.ultrag.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+</head>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+      <link rel="styleshet" href="style/styleCss.css"/>
+<body>
+	<header>
+	<ul id="dropdown1" class="dropdown-content">
+	  <li><a href="#!">one</a></li>
+	  <li><a href="#!">two</a></li>
+	  <li class="divider"></li>
+	  <li><a href="#!">three</a></li>
+	</ul>
+	<nav>
+    <div class="nav-wrapper , #76ff03 light-green accent-3">
+      <a href="#" class="brand-logo"><i class="material-icons">local_movies</i>Achados e Perdidos - IFRN Campus Lajes: objetos achados</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      	<li><a class="dropdown-trigger" href="/CadastroObjetoAchado" data-target="dropdown1">Cadastrar objeto achado<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a href=/ListarObjetoPerdido>Objetos perdidos</a></li>
+      </ul>
+    </div>
+  </nav>
+	</header>
+	
+<table class="collection , striped , highlight">
+	<thead>
+		<tr>
+			<th>Objeto achado:</th>
+			<th>Descrição:</th>
+			<th>Data da entrega:</th>
+			<th>Aluno que devolveu:</th>
+			<th>Devolução</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="objeto : ${objetosachados}">
+			<td><span th:text="${objeto.nome}"></span></td>
+			<td><span th:text="${objeto.descricaoAchado}"></span></td>
+			<td><span th:text="${objeto.dataEntrega}"></span></td>
+			<td><span th:text="${objeto.alunoDevolveu}"></span></td>
+			<td><a th:href="${(#mvc.url('OAC#deletarObjeto').arg(0, objeto.codigo)).build()}"><i class="material-icons left">Devolver</i></a></td>
+		</tr>
+	</tbody>
+
+</table>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+ 		<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
+</body>
+
+
+</html>

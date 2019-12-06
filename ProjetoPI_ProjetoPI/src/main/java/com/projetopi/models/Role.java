@@ -18,24 +18,13 @@ public class Role implements GrantedAuthority {
 	@Id
 	private Long id;
 	private String nomeRole;
-	@ManyToMany
 	
-	private List<Usuario> Usuarios;
-
 	public Long getId() {
 		return id;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public List<Usuario> getUsuarios() {
-		return Usuarios;
-	}
-
-	public void setUsuarios(List<Usuario> usuarios) {
-		Usuarios = usuarios;
 	}
 
 	public String getNomeRole() {

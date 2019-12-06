@@ -8,6 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.JoinColumn;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -26,9 +29,9 @@ public class Usuario implements UserDetails {
 	private String login;
 	private String nomeCompleto;
 	private String senha;
+	
 	@ManyToMany
-	@JoinTable(name = "usuarios_roles", joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "login"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "nomeRole"))
-
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<Role> roles;
 
 	public Long getId() {
